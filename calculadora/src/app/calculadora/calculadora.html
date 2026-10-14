@@ -1,1 +1,17 @@
-<p>calculadora works!</p>
+<section class="calc">
+  <h2>Calculadora</h2>
+
+  <div class="fila">
+    <label for="a">Número A</label>
+    <input id="a" type="number" name="a" [(ngModel)]="a" />
+  </div>
+
+  <div class="fila">
+    <label for="b">Número B</label>
+    <input id="b" type="number" name="b" [(ngModel)]="b" />
+  </div>
+
+  <button type="button" (click)="sumar()">Sumar</button>
+
+  <p class="resultado">Resultado: <strong>{{ resultado() }}</strong></p>
+</section>
