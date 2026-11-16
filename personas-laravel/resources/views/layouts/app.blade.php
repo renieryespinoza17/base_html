@@ -8,8 +8,6 @@
 </head>
 <body>
 
-    <h1>PLANTILLA LARAVEL FUNCIONANDO</h1>
-
     @auth
         <p>Sesión de {{ auth()->user()->name }}</p>
 
