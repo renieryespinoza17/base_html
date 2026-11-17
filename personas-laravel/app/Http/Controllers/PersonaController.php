@@ -7,17 +7,21 @@ use Illuminate\Http\Request;
 
 class PersonaController extends Controller
 {
+    // Mostrar listado de personas
     public function index()
     {
-        $personas = Persona::all();
+        $personas = Persona::orderBy('id')->get();
+
         return view('personas.index', compact('personas'));
     }
 
+    // Mostrar formulario para crear una persona
     public function create()
     {
         return view('personas.create');
     }
 
+    // Guardar una persona en la base de datos
     public function store(Request $request)
     {
         $datos = $request->validate([
