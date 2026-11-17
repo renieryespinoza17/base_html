@@ -1,24 +1,23 @@
-
 @extends('layouts.app')
 
 @section('contenido')
 
-<h1>INICIAR SESIÓN</h1>
+    <h1>INICIAR SESIÓN</h1>
 
-<form method="POST" action="{{ route('login.store') }}">
-    @csrf
+    <form method="POST" action="{{ route('login.store') }}">
+        @csrf
 
-    <label>Correo electrónico</label>
-    <input type="email" name="email" required>
+        <label>Correo electrónico</label>
+        <input type="email" name="email" required>
 
-    <br><br>
+        <br><br>
 
-    <label>Contraseña</label>
-    <input type="password" name="password" required>
+        <label>Contraseña</label>
+        <input type="password" name="password" required>
 
-    <br><br>
+        <br><br>
 
-    <button type="submit">Ingresar</button>
-</form>
+        <button type="submit">Ingresar</button>
+    </form>
 
 @endsection
