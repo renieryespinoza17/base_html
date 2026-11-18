@@ -29,10 +29,13 @@
                     <td>{{ $persona->dni }}</td>
                     <td>{{ $persona->nombre }}</td>
                     <td>{{ $persona->fecha_nacimiento->format('d/m/Y') }}</td>
+                    <td>
+                        <a href="{{ route('personas.edit', $persona->id) }}">Editar</a>
+                    </td>
                 </tr>
             @empty
                 <tr>
-                    <td colspan="4">No hay personas registradas.</td>
+                    <td colspan="5">No hay personas registradas.</td>
                 </tr>
             @endforelse
         </tbody>
