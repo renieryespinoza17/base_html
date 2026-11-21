@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Persona;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;      
+use Illuminate\Validation\Rule;
 class PersonaController extends Controller
 {
     // Mostrar listado de personas
@@ -68,13 +68,19 @@ class PersonaController extends Controller
         $persona->save();
         return redirect()->route('personas.index')
             ->with('exito', 'Persona actualizada correctamente.');
+
+
     }
 
+    public function destroy(int $id)
+    {
+        $persona = Persona::findOrFail($id);
 
+        $persona->delete();
 
-
-
-
+        return redirect()->route('personas.index')
+            ->with('exito', 'Persona eliminada correctamente.');
+    }
 
 
 }
